@@ -68,6 +68,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'main.contest_processor.get_categories',
             ],
         },
     },
@@ -83,8 +84,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'blogging_blog_db',
-        'USER': 'asada',
-        'PASSWORD': '123',
+        'USER': 'postgres',
+        'PASSWORD': '1',
         'HOST': 'localhost',
         'PORT': 5432
     }
@@ -136,4 +137,5 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 AUTH_USER_MODEL = 'account.User'
-#LOGIN_REDIRECT_URL = '/blogging'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
